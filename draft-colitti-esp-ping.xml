@@ -75,7 +75,7 @@ IPsec sessions between hosts that have global connectivity will by default use u
 <ul>
 <li><t>They require fewer keepalive packets to keep sessions open.</t>
 <ul>
-<li>On some networks, ESP is be statelessly allowed in both directions, and thus not require any keepalive packets at all. For example, the IPv6 Simple Security recommendations [<xref target="RFC6092"/>] specify that ESP by default must always be allowed and not be subject to any timeouts.</li>
+<li>On some networks, ESP is be statelessly allowed in both directions, and thus not require any keepalive packets at all. For example, the IPv6 Simple Security recommendations <xref target="RFC6092"/> specify that ESP by default must always be allowed and not be subject to any timeouts.</li>
 <li>Even if ESP is not statelessly allowed, experience from real world networks is that timeouts for ESP are higher than for UDP sessions, thus requiring IPsec endpoints to send fewer keepalives.</li>
 </ul>
 </li>
@@ -85,7 +85,7 @@ IPsec sessions between hosts that have global connectivity will by default use u
 <t>
 However, because ESP packets do not share fate with IKE packets, it is possible for the network to allow IKE packets but not ESP packets. This leads to the IPsec session not being able to exchange any packets even though IKE negotiation succeeded.
 
-Because ESP is only used after IKE negotiation, this failure mode is difficult to predict, difficult to detect, and difficult to recover from. In particular, migrating a session using MOBIKE [<xref target="RFC4555"/>] to a network that doe snot allow ESP could result in the session blackholing all future packets until the problem is detected and a new migration is performed to enable encapsulation.
+Because ESP is only used after IKE negotiation, this failure mode is difficult to predict, difficult to detect, and difficult to recover from. In particular, migrating a session using MOBIKE <xref target="RFC4555"/> to a network that doe snot allow ESP could result in the session blackholing all future packets until the problem is detected and a new migration is performed to enable encapsulation.
 </t>
 
 <t>
@@ -109,7 +109,7 @@ Operational experience suggests that networks and some home routers that drop ES
       <name>Security Considerations</name>
 <t>The security considerations are similar to other unconnected request-reply protocols such as ICMPv6 echo. In particular:</t>
 <ul>
-<li>By sending an ESP Echo Request from a spoofed source address, an attacker could cause a server to send an ESP Echo Reply to that address. This does not constitute an amplification attack because the ESP Echo Reply is the same size as the ESP Echo Request. This can be prevented by implementing ingress filtering per BCP 38 [<xref target="RFC2827"/>].</li>
+<li>By sending an ESP Echo Request from a spoofed source address, an attacker could cause a server to send an ESP Echo Reply to that address. This does not constitute an amplification attack because the ESP Echo Reply is the same size as the ESP Echo Request. This can be prevented by implementing ingress filtering per BCP 38 <xref target="RFC2827"/>.</li>
 <li>An attacker can use ESP Echo Request packets to determine whether a particular destination address is an ESP endpoint. This is not a new attack because any endpoint that supports ESP must also reply to IKE INIT packets.</li>
 </ul>
     </section>
