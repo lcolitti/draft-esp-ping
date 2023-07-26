@@ -155,7 +155,7 @@ Operational experience suggests that networks and some home routers that drop ES
     <section anchor="Acknowledgements" numbered="false">
       <name>Acknowledgements</name>
 <t>
-Thanks to Tero Kivinen, Andrew McGregor, and Paul Wouters for helpful discussion and suggestions.
+Thanks to Tero Kivinen, Steffen Klassert, Andrew McGregor, and Paul Wouters for helpful discussion and suggestions.
 </t>
     </section>
     
